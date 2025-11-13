@@ -110,14 +110,24 @@ class GPIOKeystrokeConverter:
             # If pull_up is False, button press pulls pin HIGH (rising edge)
             edge = GPIO.FALLING if pin_config.get('pull_up', True) else GPIO.RISING
             
-            GPIO.add_event_detect(
-                pin, 
-                edge, 
-                callback=self.button_callback, 
-                bouncetime=bounce_time
-            )
+            # Remove any existing edge detection first to handle restarts
+            try:
+                GPIO.remove_event_detect(pin)
+            except Exception:
+                # Ignore errors if no edge detection was registered
+                pass
             
-            logger.info(f"Setup GPIO pin {pin} for key '{pin_config['key']}'")
+            try:
+                GPIO.add_event_detect(
+                    pin, 
+                    edge, 
+                    callback=self.button_callback, 
+                    bouncetime=bounce_time
+                )
+                logger.info(f"Setup GPIO pin {pin} for key '{pin_config['key']}'")
+            except RuntimeError as e:
+                logger.error(f"Failed to add edge detection for GPIO pin {pin}: {e}")
+                raise RuntimeError(f"Failed to add edge detection for GPIO pin {pin}") from e
     
     def button_callback(self, pin):
         """Callback function when a button is pressed"""
