@@ -1,0 +1,35 @@
+{
+  "bounce_time_ms": 200,
+  "buttons": [
+    {
+      "gpio_pin": 17,
+      "key": "W",
+      "pull_up": true
+    },
+    {
+      "gpio_pin": 27,
+      "key": "A",
+      "pull_up": true
+    },
+    {
+      "gpio_pin": 22,
+      "key": "S",
+      "pull_up": true
+    },
+    {
+      "gpio_pin": 23,
+      "key": "D",
+      "pull_up": true
+    },
+    {
+      "gpio_pin": 24,
+      "key": "SPACE",
+      "pull_up": true
+    },
+    {
+      "gpio_pin": 25,
+      "key": "ESC",
+      "pull_up": true
+    }
+  ]
+}

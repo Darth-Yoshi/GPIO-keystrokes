@@ -1,0 +1,50 @@
+{
+  "bounce_time_ms": 200,
+  "buttons": [
+    {
+      "gpio_pin": 17,
+      "key": "UP",
+      "pull_up": true
+    },
+    {
+      "gpio_pin": 27,
+      "key": "DOWN",
+      "pull_up": true
+    },
+    {
+      "gpio_pin": 22,
+      "key": "LEFT",
+      "pull_up": true
+    },
+    {
+      "gpio_pin": 23,
+      "key": "RIGHT",
+      "pull_up": true
+    },
+    {
+      "gpio_pin": 24,
+      "key": "SPACE",
+      "pull_up": true
+    },
+    {
+      "gpio_pin": 25,
+      "key": "1",
+      "pull_up": true
+    },
+    {
+      "gpio_pin": 5,
+      "key": "2",
+      "pull_up": true
+    },
+    {
+      "gpio_pin": 6,
+      "key": "3",
+      "pull_up": true
+    },
+    {
+      "gpio_pin": 13,
+      "key": "ESC",
+      "pull_up": true
+    }
+  ]
+}
